@@ -11,9 +11,14 @@ public class WorldManager : MonoBehaviour {
 
     [SerializeField]
     private Camera MainCamera;
+    [SerializeField]
+    private GUIManager GUIManager;
 
     [SerializeField]
     private Character P1; 
+
+
+   
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +37,10 @@ public class WorldManager : MonoBehaviour {
             tpos.z = characterDepth;
 
             P1.SetTargetPosition(tpos);
+        }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            GUIManager.ShowMessage("Hello", 1);
         }
         
 	}
