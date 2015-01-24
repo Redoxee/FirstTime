@@ -63,4 +63,13 @@ public class GUIManager : MonoBehaviour {
         MessageState = "TransitionIn";
         MessageDisplayDuration = duration;
     }
+
+    [SerializeField]
+    private GameObject SelectedObjectGizmo;
+
+    public void SetCollectItemTexture(Sprite sprite)
+    {
+        SpriteRenderer sRenderer = SelectedObjectGizmo.GetComponentsInChildren<SpriteRenderer>()[1];
+        sRenderer.sprite = sprite;
+    }
 }

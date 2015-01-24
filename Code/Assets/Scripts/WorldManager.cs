@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WorldManager : MonoBehaviour {
 
@@ -18,6 +19,11 @@ public class WorldManager : MonoBehaviour {
     private Character P1;
 
     private GameObject CurrentItem;
+
+
+    private void InitDictionary()
+    {
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +47,33 @@ public class WorldManager : MonoBehaviour {
 
     public void NotifyTriggerHit(Collider other)
     {
-        GUIManager.ShowMessage("There are some sexy costumes in there", 1);
+
+        var ros = other.GetComponentInParent<RoomObjectScript>();
+        var objectName = ros.RoomObjectName;
+        if (objectName == "Closet")
+        { 
+            ClosetComportment();
+        }
+        else if (objectName == "Table")
+        {
+            TableComportment(ros);
+        }
     }
+
+    private void ClosetComportment()
+    {
+        GUIManager.ShowMessage("Sexy Costume times", 1.2f);
+    }
+
+    private void TableComportment(MonoBehaviour ros)
+    {
+        GUIManager.ShowMessage("I'll take this toy ... I guess", 1.2f);
+        var GMichet = GameObject.Find("Table/GMichet");
+        GMichet.renderer.enabled = false;
+
+        CurrentItem = GMichet;
+        GUIManager.SetCollectItemTexture(GMichet.GetComponent<SpriteRenderer>().sprite);
+    }
+
+
 }

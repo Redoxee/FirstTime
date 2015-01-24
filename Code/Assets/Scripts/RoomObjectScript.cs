@@ -3,8 +3,8 @@ using System.Collections;
 
 public class RoomObjectScript : MonoBehaviour {
 
-    [SerializeField]
-    private WorldManager Manager;
+
+    public string RoomObjectName;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +16,8 @@ public class RoomObjectScript : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter(Collider other)
+    public string getRoomObjectName()
     {
-        Manager.NotifyTriggerHit(other);
+        return RoomObjectName;
     }
 }
