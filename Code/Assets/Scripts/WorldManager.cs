@@ -15,10 +15,9 @@ public class WorldManager : MonoBehaviour {
     private GUIManager GUIManager;
 
     [SerializeField]
-    private Character P1; 
+    private Character P1;
 
-
-   
+    private GameObject CurrentItem;
 
 	// Use this for initialization
 	void Start () {
