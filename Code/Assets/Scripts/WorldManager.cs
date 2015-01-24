@@ -38,10 +38,10 @@ public class WorldManager : MonoBehaviour {
 
             P1.SetTargetPosition(tpos);
         }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            GUIManager.ShowMessage("Hello", 1);
-        }
-        
 	}
+
+    public void NotifyTriggerHit(Collider other)
+    {
+        GUIManager.ShowMessage("There are some sexy costumes in there", 1);
+    }
 }

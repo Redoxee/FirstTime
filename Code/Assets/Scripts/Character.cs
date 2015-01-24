@@ -3,11 +3,16 @@ using System.Collections;
 
 public class Character : MonoBehaviour {
 
+    [SerializeField]
+    private WorldManager Manager;
+
     private float Speed = 2.5f;
     private float positionThreshold = .1f;
 
     private Vector3 TargetPosition;
     private bool IsMoving = false;
+
+    
 
     public void SetTargetPosition(Vector3 target)
     {
@@ -38,6 +43,10 @@ public class Character : MonoBehaviour {
                 
             }
         }
-	
 	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        Manager.NotifyTriggerHit(other);
+    }
 }
