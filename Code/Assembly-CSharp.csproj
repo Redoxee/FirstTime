@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\CollectableObject.cs" />
      <Compile Include="Assets\Scripts\GUIManager.cs" />
+     <Compile Include="Assets\Scripts\Gauge.cs" />
      <Compile Include="Assets\Scripts\RoomObjectScript.cs" />
      <Compile Include="Assets\Scripts\WorldManager.cs" />
   </ItemGroup>

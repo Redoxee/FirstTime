@@ -73,6 +73,8 @@ public class WorldManager : MonoBehaviour {
 
         CurrentItem = GMichet;
         GUIManager.SetCollectItemTexture(GMichet.GetComponent<SpriteRenderer>().sprite);
+
+        GUIManager.SetGaugeLevel("P1", .2f);
     }
 
 

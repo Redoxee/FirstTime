@@ -5,8 +5,12 @@ public class GUIManager : MonoBehaviour {
 
     public TextMesh DisplayText;
 
+    [SerializeField]
+    private Gauge P1Gauge;
+
     private Vector3 StartTextPosition = new Vector3(0, -5, -9);
     private Vector3 ShowMessagePosition = new Vector3(0, -2, -9);
+
 
     private float TransitionTime = 0.5f;
     private float MessageDisplayDuration = 0f;
@@ -71,5 +75,17 @@ public class GUIManager : MonoBehaviour {
     {
         SpriteRenderer sRenderer = SelectedObjectGizmo.GetComponentsInChildren<SpriteRenderer>()[1];
         sRenderer.sprite = sprite;
+    }
+
+    public float GetGaugeLevel(string player)
+    {
+        return P1Gauge.CurrentProgression;
+    }
+    public void SetGaugeLevel(string player, float level)
+    {
+        if (player == "P1")
+        {
+            P1Gauge.SetProression(level);
+        }
     }
 }
